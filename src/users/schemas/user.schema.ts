@@ -21,10 +21,12 @@ export const userSchema = new Schema({
     min: 5,
     max: 100,
   },
-  password: {
+  pin: {
     type: String,
-    min: 8,
-    max: 20,
+  
+  },
+  phone:{
+    type: String,
   },
   date: {
     type: Date,

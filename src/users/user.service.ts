@@ -36,7 +36,7 @@ export class UserService {
 
     async signIn(user, res): Promise<User> {
         try {
-            const foundUser = await this.clientModel.findOne({ email: user.email });
+            const foundUser = await this.clientModel.findOne({ phone: user.phone });
             if (foundUser) {
                 const token = await TokenService.getToken({
                     firstName: user.firstName,

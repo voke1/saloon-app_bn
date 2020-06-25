@@ -22,7 +22,7 @@ export class UserService {
                     'User already exist',
                 );
             }
-            user.password = await bcrypt.hash(user.password, 6);
+            user.pin = await bcrypt.hash(user.pin, 6);
             const userCreated = await new this.clientModel(user);
             if (userCreated) {
                 userCreated.save()

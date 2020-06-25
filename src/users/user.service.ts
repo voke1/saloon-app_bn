@@ -61,9 +61,9 @@ export class UserService {
 
 
 
-    async getProfile(email, res): Promise<User> {
+    async getProfile(phone, res): Promise<User> {
         try {
-            const user = await this.clientModel.findOne({ email });
+            const user = await this.clientModel.findOne({ phone });
             if (user) {
 
                 return this.responseService.requestSuccessful(res, user);

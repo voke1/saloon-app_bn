@@ -11,6 +11,14 @@ import { ResponseService } from './utils/response-handler.service';
 import { TokenService } from './utils/jwt.service';
 import { SmeService } from './smes/smes.service';
 import { smeSchema } from './smes/schemas/sme.schema';
+import { AppointmentService } from './appointments/.service';
+import { AptController } from './appointments/.controller';
+import { LocationService } from './locations/.service';
+import { LocationController } from './locations/.controller';
+import { OffersController } from './offers/.controller';
+import { OfferService } from './offers/.service';
+import { SaloonController } from './saloonservice/.controller';
+import { SaloonService } from './saloonservice/.service';
 
 
 const configuration = () => ({
@@ -37,14 +45,22 @@ const configuration = () => ({
   controllers: [
     AppController,
     UserController,
-    SmeController
+    SmeController,
+    AptController,
+    LocationController,
+    OffersController,
+    SaloonController
   ],
   providers: [
     AppService,
     UserService,
     ResponseService,
     TokenService,
-    SmeService
+    SmeService,
+    AppointmentService,
+    LocationService,
+    SaloonService,
+    OfferService
   ],
 })
 export class AppModule { }

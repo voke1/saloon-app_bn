@@ -29,6 +29,7 @@ export class UserController {
         @Req() req,
         @Res() res,
     ): Promise<User> {
+        console.log('USER: ', user)
 
         return await this.UserService.signUp(user, res);
     }

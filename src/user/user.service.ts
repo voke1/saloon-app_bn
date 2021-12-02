@@ -23,6 +23,12 @@ export class UserService {
                 );
             }
             user.password = await bcrypt.hash(user.password, 6);
+            const token = await TokenService.getToken({
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                }, '30d');
+                user.token = token;
             const userCreated = await new this.userModel(user)
             if (userCreated) {
                 userCreated.save()
@@ -44,9 +50,9 @@ export class UserService {
                     lastName: user.lastName,
                     email: user.email,
                 }, '30d');
-                user.token = token;
+                foundUser.token = token;
              
-                return this.responseService.requestSuccessful(res, user);
+                return this.responseService.requestSuccessful(res, foundUser);
             }else{
                 return this.responseService.clientError(
                     res,

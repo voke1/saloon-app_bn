@@ -15,7 +15,7 @@ export class ResponseService {
   async serverError(res, message) {
     return res.status(500).json({
       success: false,
-      message: message || 'Internal server error',
+      data: message || 'Internal server error',
     });
   }
 
@@ -29,7 +29,7 @@ export class ResponseService {
   async clientError(res, message, status = 400) {
     return res.status(status).json({
       success: false,
-      message,
+      data: message,
     });
   }
 
@@ -41,6 +41,6 @@ export class ResponseService {
    * @returns {object} res - HTTP response object
    */
   async requestSuccessful(res, payload, status = 200) {
-    return res.status(status).json(payload);
+    return res.status(status).json({ success: true, data: payload});
   }
 }

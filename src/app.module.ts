@@ -3,13 +3,16 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserController } from './user/user.controller';
-import { MarketsController } from './markets/markets.controller';
-import { MarketsService } from './markets/markets.service';
+import { SpecialistController } from './specialist/specialist.controller';
+import { SpecialistService } from './specialist/specialist.service';
 import { UserService } from './user/user.service';
 import { ResponseService } from './utils/response-handler.service';
 import { userSchema } from './user/schemas/user.schema';
 import { ConfigModule } from "@nestjs/config";
-import { marketSchema } from './markets/schemas/market.schema'
+import { bookingSchema } from './booking/schemas/booking.schema';
+import { BookingController } from './booking/booking.controller';
+import { BookingService } from './booking/booking.service';
+import { specialistSchema } from './specialist/schemas/specialist.schema';
 
 
 
@@ -26,7 +29,8 @@ const configuration = () => ({
   imports: [
     MongooseModule.forFeature([
       { name: "User", schema: userSchema },
-      { name: "Market", schema: marketSchema},
+      { name: "Specialist", schema: specialistSchema},
+      { name: "Booking", schema: bookingSchema},
     ]),
 
     ConfigModule.forRoot({ isGlobal: true, load: [configuration] }),
@@ -36,13 +40,15 @@ const configuration = () => ({
   controllers: [
 AppController, 
 UserController,
-MarketsController
+SpecialistController,
+BookingController
   ],
   providers: [
     AppService,
     UserService,
-    MarketsService,
+    SpecialistService,
     ResponseService,
+    BookingService,
 
   ],
 })

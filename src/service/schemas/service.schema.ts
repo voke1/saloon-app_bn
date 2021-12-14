@@ -1,27 +1,28 @@
 
+
+
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
-export const bookingSchema = new Schema({
+export const serviceSchema = new Schema({
 
-  userId: {
+  name: {
     type: String,
-  
+    min: 5,
+    max: 50,
   },
-
-  service: {
+  description: {
     type: String,
-  },  
-  slot: {
-    type: String,
-  },
-  specialist: {
-    type: Object,
 
   },
+
+  imageUrl: {
+    type: String,
+    
+  },
+
   date: {
     type: Date,
-
+    default: Date.now,
   },
- 
 });

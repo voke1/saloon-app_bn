@@ -1,11 +1,14 @@
 
 export interface Payment extends Document {
 id?: string;
-customerId: string;
-orderId: string;
+userId: string;
+status: string;
 paymentDate: string;
-amount: number;
+amount: string;
 paymentType: string;
+serviceId: string,
+transaction_id: string,
+tx_ref: string,
 date: Date;
 }
 

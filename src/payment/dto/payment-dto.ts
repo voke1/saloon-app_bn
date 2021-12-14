@@ -1,9 +1,12 @@
-export class CreateMarketDto {
+export class CreatePaymentDto {
   readonly id?: string;
-  readonly customerId: string;
-  readonly orderId: string;
+  readonly userId: string;
+  readonly status: string;
+  readonly transaction_id: string;
+  readonly tx_ref: string;
+  readonly serviceId: string;
   readonly paymentDate: string;
-  readonly amount: number;
+  readonly amount: string;
   readonly paymentType: string;
   readonly date: Date;
 }

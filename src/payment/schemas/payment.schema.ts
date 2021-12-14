@@ -6,12 +6,12 @@ import { Schema } from 'mongoose';
 
 export const paymentSchema = new Schema({
 
-  customerId: {
+  userId: {
     type: String,
     min: 5,
     max: 50,
   },
-  orderId: {
+  status: {
     type: String,
 
   },
@@ -20,8 +20,19 @@ export const paymentSchema = new Schema({
   },
   amount: {
     type: String,
-    min: 5,
-    max: 100,
+  
+  },
+   transaction_id: {
+    type: String,
+  
+  },
+   tx_ref: {
+    type: String,
+  
+  },
+   serviceId: {
+    type: String,
+  
   },
   paymentType: {
     type: String,

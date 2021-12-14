@@ -25,7 +25,7 @@ export class BookingController {
 
     @Post('booking')
     // @UseGuards(new AuthGuard())
-    createMarket(
+    createBooking(
         @Body() Booking: Booking,
 
     ): Promise<Booking> {

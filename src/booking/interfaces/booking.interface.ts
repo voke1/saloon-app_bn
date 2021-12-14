@@ -2,8 +2,8 @@
 export interface Booking extends Document {
    id?: string;
    userId: string;
-   paymentId: string;
    service: string;
+   slot: string;
    specialist: object;
    date: Date;
 }

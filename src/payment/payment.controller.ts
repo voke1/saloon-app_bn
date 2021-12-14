@@ -24,11 +24,12 @@ export class PaymentController {
 
 
     @Post('payment')
-    @UseGuards(new AuthGuard())
-    createMarket(
+    // @UseGuards(new AuthGuard())
+    createPayment(
         @Body() payment: Payment,
 
     ): Promise<Payment> {
+        console.log("PAYMENT: ", payment)
         return this.paymentservice.createPayment(payment);
     }
 
@@ -38,13 +39,13 @@ export class PaymentController {
     }
 
     @Get('payment/:paymentId')
-    findMarket(@Param('paymentId') marketId): Promise<Payment[]> {
-        return this.paymentservice.getPayment(marketId);
+    findMarket(@Param('paymentId') paymentId): Promise<Payment[]> {
+        return this.paymentservice.getPayment(paymentId);
     }
 
 
     @Delete('payment/:paymentId')
-    @UseGuards(new AuthGuard())
+    // @UseGuards(new AuthGuard())
     delete(@Param('paymentId') id): Promise<Payment> {
         return this.paymentservice.delete(id);
     }

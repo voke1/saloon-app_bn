@@ -4,7 +4,7 @@
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
-export const serviceSchema = new Schema({
+export const offerSchema = new Schema({
 
   name: {
     type: String,
@@ -15,7 +15,15 @@ export const serviceSchema = new Schema({
     type: String,
 
   },
-    category: {
+  amount: {
+    type: String,
+
+  },
+    services: {
+    type: String,
+
+  },
+    duration: {
     type: String,
 
   },

@@ -22,6 +22,9 @@ import { AppointmentService } from './appointment/appointment.service';
 import { paymentSchema } from './payment/schemas/payment.schema';
 import { PaymentController } from './payment/payment.controller';
 import { PaymentService } from './payment/payment.service';
+import { offerSchema } from './offer/schemas/offer.schema';
+import { OfferController } from './offer/offer.controller';
+import { OfferService } from './offer/offer.service';
 
 
 
@@ -43,6 +46,7 @@ const configuration = () => ({
       { name: "Service", schema: serviceSchema},
       { name: "Appointment", schema: appointmentSchema},
       { name: "Payment", schema: paymentSchema},
+      { name: "Offer", schema: offerSchema},
     ]),
 
     ConfigModule.forRoot({ isGlobal: true, load: [configuration] }),
@@ -57,6 +61,7 @@ BookingController,
 ServiceController,
 AppointmentController,
 PaymentController,
+OfferController,
   ],
   providers: [
     AppService,
@@ -67,6 +72,7 @@ PaymentController,
     Services,
     AppointmentService,
     PaymentService,
+    OfferService,
 
   ],
 })

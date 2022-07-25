@@ -15,6 +15,15 @@ export const serviceSchema = new Schema({
     type: String,
 
   },
+    amount: {
+    type: String,
+
+  },
+    duration: {
+    type: String,
+
+  },
+
     category: {
     type: String,
 
